@@ -4,14 +4,21 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class ButtonForL2 : MonoBehaviour, IPointerDownHandler
+public class ButtonForL2 : MonoBehaviour
 {
-    public void OnPointerDown(PointerEventData eventData)
+    
+    public void ChampBigStick()
     {
-        d = eventData.OnPointerDown.GetComponent<ButtonForLookingAtCard>();
-        if (d.enabled == false)
-        {
-            d.enabled = true;
-        }
+        GameObject.Find("Panel").GetComponent<Image>().enabled = false;
+        GameObject.Find("Image (1)").GetComponent<Image>().enabled = false;
+        GameObject.Find("Image").GetComponent<Image>().enabled = false;
+        GameObject.Find("Image (3)").GetComponent<Image>().enabled = false;
+        GameObject.Find("Image (2)").GetComponent<Image>().enabled = false;
+
+
+
+
+
     }
+
 }
