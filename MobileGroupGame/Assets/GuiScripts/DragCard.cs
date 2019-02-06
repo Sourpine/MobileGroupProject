@@ -6,8 +6,8 @@ using UnityEngine.EventSystems;
 public class DragCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
 
     public Transform parentToReturnTo = null;
-    public enum Slot {One, Two, Three, Four, Five};
-    public Slot typeOfItem = Slot.One;
+    public enum Slot {WEAPON, LEGS, ARMS, Four, Five};
+    public Slot typeOfItem = Slot.WEAPON;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
