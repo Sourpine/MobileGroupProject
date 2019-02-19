@@ -35,7 +35,7 @@ public class Hero : MonoBehaviour
         textUI.Add(gameObject.transform.Find("HP").gameObject);
         if (gameObject.tag == "EnemyHero")
         {
-            name = "Generic Turd";
+            name = "Generic";
             textUI[0].GetComponent<Text>().text = name;
         }
         textUI[1].GetComponent<Text>().text = hp.ToString();
