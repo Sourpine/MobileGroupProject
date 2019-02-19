@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Hero : MonoBehaviour
 {
     //fields
+    public int difAdd = 0;
     private string name;
     private int hp;
     private List<GameObject> textUI;
@@ -29,6 +30,9 @@ public class Hero : MonoBehaviour
     //Methods
     private void Start()
     {
+        PlayerPrefs.SetInt("DifAdd", difAdd);
+        difAdd = PlayerPrefs.GetInt("DifAdd");
+        hp += difAdd;
         textUI = new List<GameObject>();
         hp = 20;
         textUI.Add(gameObject.transform.Find("Name").gameObject);

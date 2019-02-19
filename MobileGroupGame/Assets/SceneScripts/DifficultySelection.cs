@@ -22,6 +22,7 @@ public class DifficultySelection : MonoBehaviour
     public void Easy()
     {
         difAdd = 0;
+        PlayerPrefs.SetInt("DifAdd", difAdd);
         SceneManager.LoadScene("MainMenu");
     }
     public void Medium()
