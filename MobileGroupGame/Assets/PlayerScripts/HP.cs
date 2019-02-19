@@ -8,7 +8,6 @@ public class HP : MonoBehaviour {
 
     public int health = 3;
     public Text healthText;
-    public Text LivesText;
     public Slider healthBar;
     float timer = 0;
     public float HealthRegen = 0.3f;
@@ -19,7 +18,6 @@ public class HP : MonoBehaviour {
         //PlayerPrefs.SetInt("Lives", lives);
         lives = PlayerPrefs.GetInt("Lives");
         healthText.GetComponent<Text>().text = "Health: " + health;
-        LivesText.GetComponent<Text>().text = "Lives:" + lives;
         healthBar.GetComponent<Slider>().value = health;
         if (lives <= 0)
         {
