@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class DifficultySelection : MonoBehaviour
 {
-    public int difAdd = 10;
+    public int difAdd = 0;
    
     // Start is called before the first frame update
     void Start()
@@ -34,7 +34,7 @@ public class DifficultySelection : MonoBehaviour
     public void Hard()
     {
         difAdd = 20;
-        PlayerPrefs.SetInt("DiffAdd", difAdd);
+        PlayerPrefs.SetInt("DifAdd", difAdd);
         SceneManager.LoadScene("MainMenu");
     }
 }

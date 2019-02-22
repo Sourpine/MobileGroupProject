@@ -30,11 +30,12 @@ public class Hero : MonoBehaviour
     //Methods
     private void Start()
     {
-        PlayerPrefs.SetInt("DifAdd", difAdd);
-        difAdd = PlayerPrefs.GetInt("DifAdd");
-        hp += difAdd;
-        textUI = new List<GameObject>();
         hp = 20;
+        //PlayerPrefs.SetInt("DifAdd", difAdd);  this line sets the above difAdd as the one for player prefs so it undoes the difficulty selection
+        difAdd = PlayerPrefs.GetInt("DifAdd");
+        textUI = new List<GameObject>();
+        
+        hp += difAdd;
         textUI.Add(gameObject.transform.Find("Name").gameObject);
         textUI.Add(gameObject.transform.Find("HP").gameObject);
         if (gameObject.tag == "EnemyHero")
@@ -61,5 +62,11 @@ public class Hero : MonoBehaviour
         hp -= amount;
         textUI[1].GetComponent<Text>().text = "";
         textUI[1].GetComponent<Text>().text = hp.ToString();
+    }
+    private void Update()
+    {
+        PlayerPrefs.SetInt("Hp", hp);
+        hp = PlayerPrefs.GetInt("Hp");
+        //note to max this is where you left off and you need to apply this to the spell on a new script remember this is the enemies hp so don't get that confused
     }
 }
