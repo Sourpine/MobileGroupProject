@@ -27,6 +27,8 @@ public class GameWorld : MonoBehaviour
     public List<GameObject> cardInfoText;
     public GameObject WinPanel;
     public GameObject LosePanel;
+    //max stuff
+    public int healingCooldown = 3;
 
     //Propeties
     public bool FirstRound
@@ -64,6 +66,7 @@ public class GameWorld : MonoBehaviour
 
     void Start()
     {
+        healingCooldown = PlayerPrefs.GetInt("HealngCooldown");
         defaultSprite = Resources.Load("Texture/FIeld") as Sprite;
         playerHero = GameObject.Find("PlayerHero");
         enemyHero = GameObject.Find("EnemyHero");
@@ -143,6 +146,7 @@ public class GameWorld : MonoBehaviour
     /// </summary>
     public void Battle()
     {
+        healingCooldown = PlayerPrefs.GetInt("HealingCooldown");
         DeselectCard();
         GameManager.Instance.selectedButton = -1;
         SetUpTurn(false, playerFields);
@@ -150,6 +154,9 @@ public class GameWorld : MonoBehaviour
         // Set the turn to enemy turn
         EnemyTurn();
         firstRound = false;
+        healingCooldown += 1;
+        PlayerPrefs.SetInt("HealingCooldown", healingCooldown);
+        Debug.Log("Plus on the Cooldown");
     }
     /// <summary>
     /// Highlight the fields 

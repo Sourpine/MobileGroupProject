@@ -11,7 +11,7 @@ public class MainMenuButtons : MonoBehaviour {
     }
     public void NewGame()
     {
-        SceneManager.LoadScene("TestONE");
+        SceneManager.LoadScene("Level01");
 
     }
 

@@ -14,6 +14,7 @@ public class EmenyHP : MonoBehaviour
     void Start()
     {
         PlayerPrefs.SetInt("EnemyHP", enemyHP);
+        PlayerPrefs.SetInt("PlayerHP", playerHP);
     }
 
     // Update is called once per frame
@@ -21,8 +22,9 @@ public class EmenyHP : MonoBehaviour
     {
         PlayerPrefs.SetInt("EnemyHP", enemyHP);
         enemyHP = PlayerPrefs.GetInt("EnemyHP");
-        playerHP = PlayerPrefs.GetInt("PlayerHP");
+        //playerHP = PlayerPrefs.GetInt("PlayerHP");
         PlayerPrefs.SetInt("PlayerHP", playerHP);
+        playerHP = PlayerPrefs.GetInt("PlayerHP");
         if (enemyHP >= 200)
         {
             enemyHP = 200;

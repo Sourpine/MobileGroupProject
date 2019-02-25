@@ -12,6 +12,7 @@ TagManager:
   - PlayerFieldCard
   - Enemy
   - EnemyCard
+  - PlayerHero
   layers:
   - Default
   - TransparentFX
