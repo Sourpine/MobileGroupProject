@@ -83,6 +83,14 @@ public class Hero : MonoBehaviour
     }
     void Update()
     {
+        if (gameObject.tag == "EnemyHero")
+        {
+            PlayerPrefs.SetInt("EnemyHP", hp);
+        }
+        if (gameObject.tag == "PlayerHero")
+        {
+            PlayerPrefs.SetInt("PlayerHP", hp);
+        }
         if ((gameObject.tag == "PlayerHero") && hp >= 20)
         {
             hp = 20;
