@@ -10,4 +10,8 @@ public class LoadDifficultyScene : MonoBehaviour
     {
         SceneManager.LoadScene("DifficultyScene");
     }
+    public void Tutorial()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
 }

@@ -29,6 +29,8 @@ public class GameWorld : MonoBehaviour
     public GameObject LosePanel;
     //max stuff
     public int healingCooldown = 3;
+    public GameObject Canvas;
+    public GameObject Orbs;
 
     //Propeties
     public bool FirstRound
@@ -213,11 +215,13 @@ public class GameWorld : MonoBehaviour
     {
         if (playerWin)
         {
+            DisableCanvas();
             WinPanel.SetActive(true);
             Time.timeScale = 0;
         }
         else
         {
+            DisableCanvas();
             LosePanel.SetActive(true);
             Time.timeScale = 0;
         }
@@ -490,5 +494,10 @@ public class GameWorld : MonoBehaviour
         {
             GameManager.Instance.hand[i].GetComponent<Card>().ButtonId = uniqeID + i;
         }
+    }
+    public void DisableCanvas()
+    {
+        Canvas.SetActive(false);
+        Orbs.SetActive(false);
     }
 }

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour {
 
-	// Use this for initialization
+    public GameObject Canvas;
+    public GameObject Orbs;
+    // Use this for initialization
 	void Start () {
 		
 	}
@@ -16,15 +18,20 @@ public class PauseMenu : MonoBehaviour {
         {
             if (Time.timeScale == 1)
             {
-            //make the menu and buttons appear
-            GetComponent<Canvas>().enabled = true;
-            //pause the game
-            Time.timeScale = 0;
+                //make the menu and buttons appear
+                GetComponent<Canvas>().enabled = true;
+                //pause the game
+                Time.timeScale = 0;
+                Canvas.SetActive(false);
+                Orbs.SetActive(false);
             }
             else if(Time.timeScale == 0)
             {
                 Resume();
-            }else
+                Canvas.SetActive(true);
+                Orbs.SetActive(true);
+            }
+            else
             {
                 //stare at fridge for an hour
             }
@@ -36,5 +43,7 @@ public class PauseMenu : MonoBehaviour {
     {
         GetComponent<Canvas>().enabled = false;
         Time.timeScale = 1;
+        Canvas.SetActive(true);
+        Orbs.SetActive(true);
     }
 }
