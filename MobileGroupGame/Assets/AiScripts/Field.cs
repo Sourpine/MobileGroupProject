@@ -71,6 +71,43 @@ public class Field : MonoBehaviour
             }
         }
     }
+    /*public void EnemyPlaceOnField()
+    {
+        // If card has been placed and isn't occupied
+        if (!GameManager.Instance.HasPlacedCard && !occupied)
+        {
+            // Runs through hand
+            for (int i = 0; i < GameManager.Instance.enemyHand.Count; i++)
+            {
+                // If it has a card componenet and a button is selected
+                if (GameManager.Instance.enemyHand[i].GetComponent<Card>() != null && GameManager.Instance.selectedButton != -1)
+                    // If the button matches the ID of the card
+                    if (GameManager.Instance.selectedButton == GameManager.Instance.enemyHand[i].GetComponent<Card>().ButtonId)
+                    {
+                        // Add the Card script to the field component
+                        this.gameObject.AddComponent<Card>();
+                        // Copy the class values from card component on hand to field
+                        CopyClassValues(GameManager.Instance.enemyHand[i].GetComponent<Card>(), this.gameObject.GetComponent<Card>());
+                        // Moves the image
+                        this.gameObject.GetComponent<Image>().sprite = GameManager.Instance.enemyHand[i].GetComponent<Image>().sprite;
+                        // De-activate Image component
+                        GameManager.Instance.enemyHand[i].GetComponent<Image>().enabled = false;
+                        // Sets the player has placed card to true so that the play can only place one card each round
+                        GameManager.Instance.HasPlacedCard = true;
+                        // Sets this field to occupied, so that the player cannot place a card oppon it
+                        occupied = true;
+                        // De-activates the card info panel
+                        GameManager.Instance.gw.CardInfo.SetActive(false);
+                        GameManager.Instance.selectedButton = -1;
+                        GameManager.Instance.enemyHand[i].GetComponent<Card>().Selected = false;
+                        // Removes the card component from the card on the players hand
+                        GameManager.Instance.enemyHand[i].GetComponent<Card>().removedFromHand = true;
+                        // De-activates all fields
+                        GameManager.Instance.gw.HighlightFields(false);
+                    }
+            }
+        }
+    }*/
     /// <summary>
     /// Show the cards info
     /// </summary>

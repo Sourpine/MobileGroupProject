@@ -37,4 +37,8 @@ public class DifficultySelection : MonoBehaviour
         PlayerPrefs.SetInt("DifAdd", difAdd);
         SceneManager.LoadScene("MainMenu");
     }
+    public void Tutor()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }

@@ -21,7 +21,7 @@ public class GameWorld : MonoBehaviour
     private bool firstRound = true;
     private GameObject battle;
     private GameObject cardInfo;
-    private GameObject cardInfoImage;
+    public GameObject cardInfoImage;
     public List<GameObject> playerFields;
     public List<GameObject> enemyFields;
     public List<GameObject> cardInfoText;

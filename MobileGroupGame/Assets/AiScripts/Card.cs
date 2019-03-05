@@ -13,7 +13,7 @@ public class Card : MonoBehaviour
     private int atk;
     [SerializeField]
     private int buttonId;
-    private Sprite tmpSprite;
+    public Sprite tmpSprite;
     private bool drawText;
     private List<GameObject> textUI;
     private string name;
@@ -156,6 +156,7 @@ public class Card : MonoBehaviour
 
         string imgTemp = "";
         GameManager.Instance.cards_stats[cardId - 1].TryGetValue("img", out imgTemp);
+        Debug.Log(imgTemp);
         image = Resources.Load<Sprite>("Card_Images/" + imgTemp);
 
         if (isPLayer)

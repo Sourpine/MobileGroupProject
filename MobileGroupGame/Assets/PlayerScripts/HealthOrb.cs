@@ -6,7 +6,7 @@ public class HealthOrb : MonoBehaviour
 {
     public int playerHP = 0;
     public int enemyHP = 0;
-    public int difAdd = PlayerPrefs.GetInt("DifAdd");
+    public int difAdd = 0;
     public int enemyMax = 0;
     public int difMult = 1;
     public GameObject Full;
