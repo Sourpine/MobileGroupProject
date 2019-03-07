@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Hero : MonoBehaviour
 {
@@ -66,21 +67,27 @@ public class Hero : MonoBehaviour
         textUI[1].GetComponent<Text>().text = "";
         textUI[1].GetComponent<Text>().text = hp.ToString();
     }
-    public void HealPlayer()
+    /*public void HealPlayer()
     {
 
         healingCooldown = PlayerPrefs.GetInt("HealingCooldown");
-        Debug.Log(healingCooldown);
+        //Debug.Log(healingCooldown);
         if ((gameObject.tag == "PlayerHero") && healingCooldown >= 3)
         {
             hp += 5;
             healingCooldown = 0;
             PlayerPrefs.SetInt("HealingCooldown", healingCooldown);
-            Debug.Log("You're Healed");
+            //Debug.Log("You're Healed");
             textUI[1].GetComponent<Text>().text = "";
             textUI[1].GetComponent<Text>().text = hp.ToString();
         }
-    }
+        if (gameObject.tag == "PlayerHero")
+        {
+            hp = PlayerPrefs.GetInt("PlayerHP", hp);
+            textUI[1].GetComponent<Text>().text = "";
+            textUI[1].GetComponent<Text>().text = hp.ToString();
+        }
+    }*/
     void Update()
     {
         if (gameObject.tag == "EnemyHero")
@@ -89,6 +96,20 @@ public class Hero : MonoBehaviour
         }
         if (gameObject.tag == "PlayerHero")
         {
+            //hp = PlayerPrefs.GetInt("PlayerHP", hp);
+            if (SceneManager.GetActiveScene().name == "Level02" && hp >= 15)
+            {
+                hp = 15;
+                textUI[1].GetComponent<Text>().text = "";
+                textUI[1].GetComponent<Text>().text = hp.ToString();
+            }
+            PlayerPrefs.SetInt("PlayerHP", hp);
+            if (SceneManager.GetActiveScene().name == "Level03" && hp >= 10)
+            {
+                hp = 10;
+                textUI[1].GetComponent<Text>().text = "";
+                textUI[1].GetComponent<Text>().text = hp.ToString();
+            }
             PlayerPrefs.SetInt("PlayerHP", hp);
         }
         if ((gameObject.tag == "PlayerHero") && hp >= 20)

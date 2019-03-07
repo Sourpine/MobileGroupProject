@@ -19,4 +19,12 @@ public class MainMenuButtons : MonoBehaviour {
     {
         Application.Quit();
     }
+    public void LoadLevel02()
+    {
+        SceneManager.LoadScene("Level02");
+    }
+    public void LoadLevel03()
+    {
+        SceneManager.LoadScene("Level03");
+    }
 }

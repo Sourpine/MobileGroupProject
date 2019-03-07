@@ -148,7 +148,7 @@ public class GameWorld : MonoBehaviour
     /// </summary>
     public void Battle()
     {
-        healingCooldown = PlayerPrefs.GetInt("HealingCooldown");
+        //healingCooldown = PlayerPrefs.GetInt("HealingCooldown");
         DeselectCard();
         GameManager.Instance.selectedButton = -1;
         SetUpTurn(false, playerFields);
@@ -156,9 +156,9 @@ public class GameWorld : MonoBehaviour
         // Set the turn to enemy turn
         EnemyTurn();
         firstRound = false;
-        healingCooldown += 1;
-        PlayerPrefs.SetInt("HealingCooldown", healingCooldown);
-        Debug.Log("Plus on the Cooldown");
+        //healingCooldown += 1;
+        //PlayerPrefs.SetInt("HealingCooldown", healingCooldown);
+        //Debug.Log("Plus on the Cooldown");
     }
     /// <summary>
     /// Highlight the fields 

@@ -9,6 +9,8 @@ public class HealthOrb : MonoBehaviour
     public int difAdd = 0;
     public int enemyMax = 0;
     public int difMult = 1;
+    public int levSub = 0;
+    public int levMult = 4;
     public GameObject Full;
     public GameObject Second;
     public GameObject Third;
@@ -41,7 +43,9 @@ public class HealthOrb : MonoBehaviour
         playerHP = PlayerPrefs.GetInt("PlayerHP", playerHP);
         PlayerPrefs.GetInt("EnemyHP", enemyHP);
         enemyHP = PlayerPrefs.GetInt("EnemyHP", enemyHP);
-        if(difAdd == 0)
+        PlayerPrefs.GetInt("LevSub", levSub);
+        levSub = PlayerPrefs.GetInt("LevSub");
+        if (difAdd == 0)
         {
             difMult = 2;
         }
@@ -53,6 +57,18 @@ public class HealthOrb : MonoBehaviour
         {
             difMult = 4;
         }
+        if (levSub == 0)
+        {
+            levMult = 4;
+        }
+        if (levSub == 5)
+        {
+            levMult = 3;
+        }
+        if (levSub == 10)
+        {
+            levMult = 2;
+        }
     }
 
     // Update is called once per frame
@@ -60,6 +76,8 @@ public class HealthOrb : MonoBehaviour
     {
         PlayerPrefs.GetInt("DifAdd", difAdd);
         difAdd = PlayerPrefs.GetInt("DifAdd");
+        PlayerPrefs.GetInt("LevSub", levSub);
+        levSub = PlayerPrefs.GetInt("LevSub");
         PlayerPrefs.GetInt("PlayerHP", playerHP);
         playerHP = PlayerPrefs.GetInt("PlayerHP", playerHP);
         PlayerPrefs.GetInt("EnemyHP", enemyHP);

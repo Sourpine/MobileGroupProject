@@ -29,7 +29,7 @@ public class Enemy : Summoner
             {
                 //select a random card on the hand
                 GameManager.Instance.enemyHand[rndNum].GetComponent<Card>().SelectCard();
-                Debug.Log("WE'RE HERE");
+                //Debug.Log("WE'RE HERE");
                 GameManager.Instance.gw.CardInfoImage.GetComponent<Image>().sprite = GameManager.Instance.enemyHand[rndNum].GetComponent<Card>().TmpSprite;
                 //Show card info on screen
                 GameManager.Instance.gw.CardInfo.SetActive(true);

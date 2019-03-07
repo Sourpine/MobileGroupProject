@@ -156,7 +156,7 @@ public class Card : MonoBehaviour
 
         string imgTemp = "";
         GameManager.Instance.cards_stats[cardId - 1].TryGetValue("img", out imgTemp);
-        Debug.Log(imgTemp);
+        //Debug.Log(imgTemp);
         image = Resources.Load<Sprite>("Card_Images/" + imgTemp);
 
         if (isPLayer)

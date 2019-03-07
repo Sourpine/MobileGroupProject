@@ -5,13 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class LevelChangeDiff : MonoBehaviour
 {
-    public int playerHP = 20;
+    public int playerHP = 0;
+    public int levSub = 0;
     
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.GetInt("PlayerHP", playerHP);
+        //PlayerPrefs.GetInt("LevSub", levSub);
+        //levSub = PlayerPrefs.GetInt("LevSub");
+        //Debug.Log("it has been subtracted");
         playerHP = PlayerPrefs.GetInt("PlayerHP", playerHP);
+        PlayerPrefs.GetInt("PlayerHP", playerHP);
         //SceneManager.GetActiveScene().name;
         if (SceneManager.GetActiveScene().name == "Level02")
         {
@@ -21,8 +25,10 @@ public class LevelChangeDiff : MonoBehaviour
         {
             playerHP -= 10;
         }
-        //PlayerPrefs.GetInt("PlayerHP", playerHP);
-        playerHP = PlayerPrefs.GetInt("PlayerHP", playerHP);
+        //playerHP -= levSub;
+        PlayerPrefs.GetInt("PlayerHP", playerHP);
+        //playerHP = PlayerPrefs.GetInt("PlayerHP", playerHP);
+        //Debug.Log("it has been subtracted");
     }
 
     // Update is called once per frame

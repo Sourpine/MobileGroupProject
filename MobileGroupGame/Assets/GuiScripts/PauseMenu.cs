@@ -6,6 +6,7 @@ public class PauseMenu : MonoBehaviour {
 
     public GameObject Canvas;
     public GameObject Orbs;
+    public GameObject PM;
     // Use this for initialization
 	void Start () {
 		
@@ -41,9 +42,29 @@ public class PauseMenu : MonoBehaviour {
 
     public void Resume()
     {
-        GetComponent<Canvas>().enabled = false;
+        GetComponent<Canvas>().enabled = true;
         Time.timeScale = 1;
         Canvas.SetActive(true);
         Orbs.SetActive(true);
+        PM.SetActive(false);
+    }
+    public void Pause()
+    {
+        if (Time.timeScale == 1)
+        {
+            //make the menu and buttons appear
+            PM.SetActive(true);
+            //pause the game
+            Time.timeScale = 0;
+            GetComponent<Canvas>().enabled = false;
+            Orbs.SetActive(false);
+        }
+        else if (Time.timeScale == 0)
+        {
+            Resume();
+            GetComponent<Canvas>().enabled = true;
+            Orbs.SetActive(true);
+            PM.SetActive(false);
+        }
     }
 }
